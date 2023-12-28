@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Domowa Biblioteka</title>
+</head>
+<body>
+    <h1>Lista Książek</h1>
+    <ul>
+        {% for book in books %}
+            <li>{{ book.title }} 
+                <!-- Link do wypożyczenia książki -->
+                <a href="{{ url_for('loan_book', book_id=book.id) }}">Wypożycz</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('add_book') }}">Dodaj książkę</a>
+    <a href="{{ url_for('add_author') }}">Dodaj autora</a>
+</body>
+</html>
